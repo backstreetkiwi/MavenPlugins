@@ -1,6 +1,7 @@
 package de.zaunkoenigweg.maven.pojomaker;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
@@ -16,13 +17,9 @@ import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
-import org.sonatype.plexus.build.incremental.BuildContext;
 
 @Mojo(name = "generatePojoClasses", defaultPhase = LifecyclePhase.GENERATE_SOURCES)
 public class PojoMakerMojo extends AbstractMojo {
-
-    @Component
-    private BuildContext plexusBuildContext;
 
     @Component
     private MavenProject mavenProject;
@@ -72,14 +69,11 @@ public class PojoMakerMojo extends AbstractMojo {
         }
 
         mavenProject.addCompileSourceRoot(this.pojoClassesFolder.getAbsolutePath());
-
-        // TODO nach delta gucken
-        // if (this.plexusBuildContext.hasDelta(fooFile)) {
     }
 
     private void createPojoClass(String name) {
         try {
-            OutputStream fileOutputStream = plexusBuildContext.newFileOutputStream(new File(this.pojoClassesFolder, String.format("%s.java", name)));
+            OutputStream fileOutputStream = new FileOutputStream(new File(this.pojoClassesFolder, String.format("%s.java", name)));
             PrintWriter printWriter = new PrintWriter(fileOutputStream);
             printWriter.println(String.format("public class %s {", name));
             printWriter.println("}");
