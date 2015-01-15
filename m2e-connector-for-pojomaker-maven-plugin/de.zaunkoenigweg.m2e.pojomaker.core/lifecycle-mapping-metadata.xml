@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lifecycleMappingMetadata>
+  <pluginExecutions>
+    <pluginExecution>
+      <pluginExecutionFilter>
+        <groupId>de.zaunkoenigweg</groupId>
+        <artifactId>pojomaker-maven-plugin</artifactId>
+        <versionRange>0.0.1-SNAPSHOT</versionRange>
+        <goals>
+          <goal>generatePojoClasses</goal>
+        </goals>
+      </pluginExecutionFilter>
+      <action>
+        <configurator>
+          <id>de.zaunkoenigweg.m2e.pojomaker.core.PojoMakerProjectConfigurator</id>
+        </configurator>
+      </action>
+    </pluginExecution>
+  </pluginExecutions>
+</lifecycleMappingMetadata>
