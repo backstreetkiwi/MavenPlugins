@@ -24,41 +24,12 @@
               <goal>generatePojoClasses</goal>
             </goals>
             <configuration>
-              <pojoDefinitionFile>${basedir}/src/main/resources/META-INF/pojos/mypojos.txt</pojoDefinitionFile>
+              <pojoDefinitionFile>${basedir}/src/main/resources/META-INF/pojos/pojos.txt</pojoDefinitionFile>
               <pojoClassesFolder>${project.build.directory}/generated-sources/pojos</pojoClassesFolder>
             </configuration>
           </execution>
         </executions>
       </plugin>
     </plugins>
-    <pluginManagement>
-      <plugins>
-        <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-        <plugin>
-          <groupId>org.eclipse.m2e</groupId>
-          <artifactId>lifecycle-mapping</artifactId>
-          <version>1.0.0</version>
-          <configuration>
-            <lifecycleMappingMetadata>
-              <pluginExecutions>
-                <pluginExecution>
-                  <pluginExecutionFilter>
-                    <groupId>de.zaunkoenigweg</groupId>
-                    <artifactId>pojomaker-maven-plugin</artifactId>
-                    <versionRange>[0.0.1-SNAPSHOT,)</versionRange>
-                    <goals>
-                      <goal>generatePojoClasses</goal>
-                    </goals>
-                  </pluginExecutionFilter>
-                  <action>
-                    <ignore></ignore>
-                  </action>
-                </pluginExecution>
-              </pluginExecutions>
-            </lifecycleMappingMetadata>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
   </build>
 </project>

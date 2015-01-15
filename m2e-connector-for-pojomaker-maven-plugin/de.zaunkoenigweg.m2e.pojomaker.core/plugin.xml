@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
+
+	<!-- This plugin contributes a m2e project configurator -->
 	<extension point="org.eclipse.m2e.core.projectConfigurators">
 		<configurator class="de.zaunkoenigweg.m2e.pojomaker.core.PojoMakerProjectConfigurator"
 				id="de.zaunkoenigweg.m2e.pojomaker.core.PojoMakerProjectConfigurator"
 				name="M2E Connector for pojomaker-maven-plugin">
 		</configurator>
 	</extension>
+	
+	<!-- This plugin extends M2E lifecycle mapping
+	     (see lifecycle-mapping-metadata.xml for details) -->
 	<extension point="org.eclipse.m2e.core.lifecycleMappingMetadataSource">
 	</extension>
+	
 </plugin>

@@ -5,7 +5,6 @@
       <pluginExecutionFilter>
         <groupId>de.zaunkoenigweg</groupId>
         <artifactId>pojomaker-maven-plugin</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
         <versionRange>0.0.1-SNAPSHOT</versionRange>
         <goals>
           <goal>generatePojoClasses</goal>
